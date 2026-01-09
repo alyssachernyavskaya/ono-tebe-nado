@@ -1,182 +1,222 @@
-.content-section {
-  box-sizing: border-box;
-  width: 100%;
-  font-weight: 400;
-  font-size: 20px;
-  color: #000;
-}
-
 .header {
-  padding: 92px 50px;
+  margin: 92px 50px 96px 50px;
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  align-items: center;
-  font-size: 18px;
-  line-height: normal;
-}
-
-.header__menu {
-  align-self: center;
+  grid-template-columns: 3.9fr 0.9fr 3.9fr;
 }
 
 .header__links-list {
   display: flex;
+  align-items: center;
+}
+
+.header__links-list-main {
+  display: flex;
+  align-items: center;
   gap: 32px;
 }
 
-.header__links-list-item {
-  list-style: circle;
-}
-
+.header__links-list-item,
 .header__links-list-item_no-bullit {
+  display: list-item;
   list-style-type: none;
 }
 
+.header__link_active,
 .header__link {
-  border-bottom: 1px solid #000;
   text-decoration: none;
+  color: #000;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.header__link_active {
-  text-decoration: none;
+.header__link {
+  display: list-item;
+  list-style-type: circle;
+  border-bottom: 1px solid black;
 }
+
+/* Элементу с классои header__logo строго заданы ращмеры,
+так как это логотип, имеющий строгий размер */
 
 .header__logo {
-  width: 140px;
-  margin: auto;
+  display: grid;
+  align-content: start;
+  width: 138px;
+  height: 105px;
 }
 
 .header__logo-image {
-  object-fit: contain;
-  object-position: top;
+  display: block;
+  align-content: start;
 }
 
 .header__address {
-  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
-.address {
-  max-width: 240px;
+.contacts-element {
+  width: 240px;
+  padding-right: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-style: normal;
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 18px;
   font-style: normal;
-  line-height: 24px;
+  font-weight: 400;
+  line-height: 23.6px;
 }
 
-.address__link {
-  border-bottom: 1px solid;
+.mail-address,
+.phone-address {
   text-decoration: none;
+  display: flex;
+  align-self: flex-start;
+  border-bottom: 0.5px solid black;
 }
+
+.city-address-second,
+.city-address-first {
+  display: flex;
+  align-self: flex-start;
+}
+
+/* Элементу с классом cover строго заданы размеры,
+так как это фоновое изображение */
 
 .cover {
-  padding: 165px 50px 50px;
   background-image: url(../images/cover.jpg);
-  background-position: center;
   background-size: cover;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.cover__title {
-  font-size: 100px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 115%;
-  letter-spacing: 30px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 2;
-}
-
-.letter-spacing-extended {
-  letter-spacing: 0.6em;
-}
-
-.title__block {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.aligned-text_center {
-  text-align: center;
-}
-
-.aligned-text_right {
-  text-align: right;
-  margin-bottom: 0;
-}
-
-.letter-small-spacing-extended {
-  letter-spacing: 30px;
-}
-
-.no-letter-spacing {
-  letter-spacing: 0;
-}
-
-.cover__description {
-  padding-top: 126px;
-  font-size: 22px;
-  font-style: normal;
-  line-height: 28px;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  word-spacing: 18px;
-  gap: 78px;
-}
-
-.cover__description-text {
-  text-align: center;
-}
-
-.bet-button {
-  padding: 12px 32px;
-  width: 257px;
-  height: 52px;
-  line-height: normal;
-  font-size: 22px;
-  text-transform: uppercase;
-  border: 1px solid #fff;
-  color: #fff;
-  background-color: transparent;
-  cursor: grab;
+  background-position: center;
 }
 
 .overlay {
-  inset: 0;
-  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  background-color: rgb(0 0 0/0.6);
+}
+
+.cover__title {
+  z-index: 2;
+  padding-top: 165px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-transform: uppercase;
+  row-gap: 19px;
+  grid-template-areas:
+    "start start start"
+    "center center center"
+    "end end end ";
+}
+
+.aligned-text_right,
+.aligned-text_center,
+.aligned-text {
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 30px;
+}
+
+.aligned-text {
+  text-align: start;
+  grid-area: start;
+  line-height: 115%;
+  margin: 0px 50px;
+}
+
+.aligned-text_center {
+  line-height: 100%;
+  text-align: center;
+  grid-area: center;
+  margin: 0px 95px 0px 65px;
+  justify-self: center;
+}
+
+.aligned-text_right {
+  line-height: 70px;
+  text-align: end;
+  grid-area: end;
+  margin: 0px 50px 0px 50px;
+}
+
+.new-letter-spacing {
+  letter-spacing: 60px;
+}
+
+.no-letter-spacing {
+  letter-spacing: 0px;
+}
+
+.cover__description {
+  display: flex;
+  justify-content: space-between;
+  margin: 105px 50px 0px 50px;
+  padding-bottom: 50px;
+}
+
+.bet-button,
+.cover__description-text {
+  color: #fff;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.cover__description-text {
+  padding-left: 372px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  letter-spacing: 0px;
+  word-spacing: 17px;
+}
+
+.cover__description-text-new-word-spacing{
+  word-spacing: 19px;
+}
+
+.bet-button {
+  display: flex;
+  padding: 12px 32px;
+  border: 1px solid #ffffff;
+  background: none;
 }
 
 .lots {
-  padding: 180px 50px 0;
+  margin: 180px 50px 0px 50px;
+  flex-shrink: 0;
 }
 
 .lots__heading {
+  margin-left: 40px;
+  margin-bottom: 27px;
+  color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 40px;
+  font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-  padding-left: 40px;
 }
 
 .lots__card-list {
   display: flex;
+  list-style-type: none;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 25px;
-  padding-top: 27px;
-  list-style: none;
-}
-
-.lots__card-list-item {
-  width: 430px;
-  min-height: 450px;
-  flex-grow: 1;
 }
 
 .card-link {
@@ -185,12 +225,19 @@
   height: 100%;
 }
 
+/* Элеменам с классом card задал четку ширину, 
+так как данный элемент состоит из определенного контента и 
+для его позиционированиия необходимо значение ширины
+Для корректного отображения на устройствах с другой диагональю экрана 
+родительскому списку добавлено свойство flex-wrap: wrap */
+
 .card {
-  padding: 50px 40px;
+  z-index: 2;
+  flex-grow: 1;
+  width: 430px;
+  min-height: 450px;
   height: 100%;
-  position: relative;
-  background-position: center;
-  background-size: cover;
+  padding: 50px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -198,147 +245,161 @@
 
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
+  background-size: cover;
 }
 
 .card_type_book {
   background-image: url(../images/card-lot-02.jpg);
+  background-size: cover;
 }
 
 .card_type_picture {
   background-image: url(../images/card-lot-03.jpg);
+  background-size: cover;
 }
 
 .card__title {
+  color: #fff;
+  font-family: Raleway, sans-serif;
   font-size: 22px;
+  font-style: normal;
   font-weight: 700;
   line-height: 120%;
   text-decoration-line: underline;
   text-transform: uppercase;
-  color: #fff;
-  z-index: 2;
+  text-decoration-skip-ink: none;
 }
 
 .card__text {
   color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 120%;
-  z-index: 2;
-  display: inline-block;
-  text-decoration: none;
+  justify-content: space-around;
 }
 
 .lots__look-more-link {
+  color: #000;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
   margin-left: 40px;
-  padding-top: 30px;
-  display: inline-block;
+  text-decoration: none;
 }
 
-.lots__look-more-link:hover {
-  transform: scale(110%);
-  transition: 3s, transform 2.5s;
+.lots__look-more-link-text {
+  text-decoration: none;
+  border-bottom: 1px solid black;
 }
-
 
 .about {
-  padding: 180px 50px;
-  display: grid;
-  grid-template-columns: 430px 1fr;
-  gap: 25px;
+  margin: 180px 50px 184px 50px;
 }
 
 .about__column {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 430px 1fr;
 }
+
+/* В случае с классом about__logo я строго указал размеры блока, так как
+это необходимо для формирования черного круга нужного размера */
 
 .about__logo {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
   width: 240px;
   height: 240px;
+  border-radius: 120px;
   background-color: #000;
-  border-radius: 50%;
+  justify-self: center;
 }
 
+/* В случае с классом about__logo-image я строго указал его размеры, 
+так как это класс, относящийся к логотипу */
+
 .about__logo-image {
-  object-fit: contain;
-  object-position: top;
+  display: grid;
   width: 148px;
+  height: 114px;
+  align-self: center;
+  margin-left: 46px;
+}
+
+.about__title-and-text-wrapper {
+  margin: 101px 0px 0px 25px;
+  display: grid;
+  row-gap: 30px;
 }
 
 .about__title {
-  margin: 100px 0;
   color: #000;
+  font-family: Raleway, sans-serif;
   font-size: 40px;
-  line-height: normal;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
   text-transform: uppercase;
+  margin-bottom: 70px;
 }
 
 .about__text {
   color: #000;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
   font-style: normal;
-  line-height: normal;
+  font-weight: 400;
+  line-height: 23px;
 }
 
-.about__text_block {
-  row-gap: 25px;
+footer {
+  margin: 0px 50px 90px 50px;
   display: flex;
-  flex-direction: column;
-}
-
-.footer {
-  padding: 0 50px 90px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-}
-
-.footer__address {
-  justify-self: left;
+  justify-content: space-between;
 }
 
 .footer__menu {
-  margin: 0 auto;
+  display: grid;
+  align-content: start;
+  justify-items: center;
 }
 
 .footer__menu-list {
-  text-align: center;
-}
-
-.footer__menu-list-item {
-  list-style: none;
+  list-style-type: none;
 }
 
 .footer__menu-link {
-  font-size: 18px;
-  line-height: normal;
+  display: grid;
+  align-self: center;
   color: #000;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-skip-ink: none;
 }
 
 .footer__menu-link_active {
   text-decoration: none;
+  border-bottom: none;
 }
 
+/* В элементе с классом foter__social-list я задал значения ширины
+для того, чтобы не задавать размеры каждой иконке социальной сети. 
+В моем случае достаточно выставить нужное расстояние между элементами
+и иконки становятся нужного размера. */
+
 .footer__social-list {
+  list-style-type: none;
   display: flex;
-  justify-self: end;
   gap: 48px;
 }
 
-.footer__social-list-item {
-  list-style: none;
+.footer__social-list-item-logo{
   width: 48px;
-  height: 48px;
-}
-
-.footer__social-link {
-  display: block;
-  height: 100%;
-  text-decoration: none;
-}
-
-.footer__social-icon {
-  object-fit: contain;
-  object-position: top;
 }
